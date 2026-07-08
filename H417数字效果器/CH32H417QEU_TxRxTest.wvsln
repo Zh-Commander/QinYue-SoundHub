@@ -1,0 +1,11 @@
+F:\WCH_Project\CH32H417QEU_TxRxTest\CH32H417QEU_TxRxTest.wvsln:
+BuildOrder=CH32H417QEU_TxRxTest_V3F,CH32H417QEU_TxRxTest_V5F
+-arm:${eclipse_home}\toolchain\arm-none-eabi-gcc\bin
+-build:${eclipse_home}\toolchain\Build Tools\bin
+-openocd name:openocd.exe
+-openocd path:${eclipse_home}\toolchain\OpenOCD\bin
+-rv:${eclipse_home}\toolchain\RISC-V Embedded GCC\bin
+F:\WCH_Project\CH32H417QEU_TxRxTest\V3F
+..\V3F
+F:\WCH_Project\CH32H417QEU_TxRxTest\V5F
+..\V5F

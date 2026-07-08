@@ -1,0 +1,51 @@
+#ifndef __SYSTEM_H
+#define __SYSTEM_H
+
+#include <stdint.h>
+
+void System_Init(void);
+void System_Loop(void);
+
+// 系统状态
+typedef enum
+{
+    SYSTEM_STATE_IDLE = 0,
+    SYSTEM_STATE_SCAN,
+    SYSTEM_STATE_SET,
+    SYSTEM_STATE_ADJUST,
+} System_State_t;
+
+// UART5通用返回
+#define UART5_RET_NO 0xFF
+#define UART5_RET_YES 0x00
+// UART5通用指令
+#define UART5_CMD_IS_IDLE 0x00
+
+// UART5空闲状态指令
+#define UART5_IDLECMD_ENTER_SCAN 0x01
+#define UART5_IDLECMD_ENTER_SET 0x02
+#define UART5_IDLECMD_ENTER_ADJUST 0x03
+#define UART5_IDLECMD_ENTER_RESTORE 0x04
+// UART5扫描状态指令
+#define UART5_SCANCMD_EXIT_SCAN 0x01
+// UART5设置状态指令
+#define UART5_SETCMD_EXIT_SET 0x01
+#define UART5_SETCMD_GETUL 0x02
+#define UART5_SETCMD_SETUL 0x03
+#define UART5_SETCMD_GETLL 0x04
+#define UART5_SETCMD_SETLL 0x05
+#define UART5_SETCMD_GETMAXL 0x06
+#define UART5_SETCMD_SETMAXL 0x07
+#define UART5_SETCMD_GETMINL 0x08
+#define UART5_SETCMD_SETMINL 0x09
+#define UART5_SETCMD_GETSCNT 0x0A
+#define UART5_SETCMD_SETSCNT 0x0B
+// UART5校准状态指令
+#define UART5_ADJUSTCMD_EXIT_ADJUST 0x01
+#define UART5_ADJUSTCMD_ADJMAXL 0x02
+#define UART5_ADJUSTCMD_ADJMINL 0x03
+
+void Scan_Enable();
+void Scan_Disable();
+
+#endif
